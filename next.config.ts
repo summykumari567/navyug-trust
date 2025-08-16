@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // GitHub Pages configuration - no basePath needed
+  // GitHub Pages configuration
+  basePath: '',
 };
 
 export default nextConfig;
