@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-8 h-8 relative">
                 <img
-                  src="/navyug-trust/navyug-logo.jpeg"
+                  src="/navyug-logo.jpeg"
                   alt="Navyug Trust Logo"
                   width={32}
                   height={32}
@@ -45,22 +45,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/courses" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#courses" className="text-gray-300 hover:text-white transition-colors">
                   Our Courses
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#gallery" className="text-gray-300 hover:text-white transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
                 </Link>
               </li>
@@ -72,22 +72,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Student Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/student-zone" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#student-zone" className="text-gray-300 hover:text-white transition-colors">
                   Student Zone
                 </Link>
               </li>
               <li>
-                <Link href="/student-login" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#student-login" className="text-gray-300 hover:text-white transition-colors">
                   Student Login
                 </Link>
               </li>
               <li>
-                <Link href="/courses" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#courses" className="text-gray-300 hover:text-white transition-colors">
                   Course Catalog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
                   Support
                 </Link>
               </li>

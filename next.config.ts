@@ -6,9 +6,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // GitHub Pages configuration
-  basePath: '/navyug-trust',
-  assetPrefix: '/navyug-trust/',
+  // GitHub Pages configuration - only for production
+  ...(process.env.NODE_ENV === 'production' && {
+    basePath: '/navyug-trust',
+    assetPrefix: '/navyug-trust/',
+  }),
 };
 
 export default nextConfig;

@@ -7,12 +7,12 @@ import { Menu, X } from 'lucide-react';
 import { NavigationItem } from '@/types';
 
 const navigationItems: NavigationItem[] = [
-  { id: 'about', label: 'About', href: '/about' },
-  { id: 'courses', label: 'Courses', href: '/courses' },
-  { id: 'student-zone', label: 'Student Zone', href: '/student-zone' },
-  { id: 'gallery', label: 'Gallery', href: '/gallery' },
-  { id: 'contact', label: 'Contact', href: '/contact' },
-  { id: 'student-login', label: 'Student Login', href: '/student-login' },
+  { id: 'about', label: 'About', href: '#about' },
+  { id: 'courses', label: 'Courses', href: '#courses' },
+  { id: 'student-zone', label: 'Student Zone', href: '#student-zone' },
+  { id: 'gallery', label: 'Gallery', href: '#gallery' },
+  { id: 'contact', label: 'Contact', href: '#contact' },
+  { id: 'student-login', label: 'Student Login', href: '#student-login' },
 ];
 
 export default function Header() {
@@ -36,7 +36,7 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 relative">
                 <img
-                  src="/navyug-trust/navyug-logo.jpeg"
+                  src="/navyug-logo.jpeg"
                   alt="Navyug Trust Logo"
                   width={40}
                   height={40}
