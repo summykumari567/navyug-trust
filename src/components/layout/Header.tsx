@@ -36,7 +36,7 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 relative">
                 <img
-                  src="/navyug-logo.jpeg"
+                  src="/navyug-trust/navyug-logo.jpeg"
                   alt="Navyug Trust Logo"
                   width={40}
                   height={40}

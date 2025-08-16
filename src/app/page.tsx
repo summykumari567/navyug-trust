@@ -79,7 +79,7 @@ export default function HomePage() {
           <div className="flex justify-center mb-6">
                           <div className="w-24 h-24 relative">
                 <img
-                  src="/navyug-logo.jpeg"
+                  src="/navyug-trust/navyug-logo.jpeg"
                   alt="Navyug Trust Logo"
                   width={96}
                   height={96}
