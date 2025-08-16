@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -11,7 +10,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-8 h-8 relative">
-                <Image
+                <img
                   src="/navyug-logo.jpeg"
                   alt="Navyug Trust Logo"
                   width={32}

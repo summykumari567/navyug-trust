@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { NavigationItem } from '@/types';
-import Image from 'next/image';
 
 const navigationItems: NavigationItem[] = [
   { id: 'about', label: 'About', href: '/about' },
@@ -36,7 +35,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 relative">
-                <Image
+                <img
                   src="/navyug-logo.jpeg"
                   alt="Navyug Trust Logo"
                   width={40}

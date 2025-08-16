@@ -10,7 +10,7 @@ import {
   Award,
   Target
 } from 'lucide-react';
-import ImageComponent from 'next/image';
+
 
 const categories = [
   {
@@ -77,15 +77,15 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 relative">
-              <ImageComponent
-                src="/navyug-logo.jpeg"
-                alt="Navyug Trust Logo"
-                width={96}
-                height={96}
-                className="object-contain"
-              />
-            </div>
+                          <div className="w-24 h-24 relative">
+                <img
+                  src="/navyug-logo.jpeg"
+                  alt="Navyug Trust Logo"
+                  width={96}
+                  height={96}
+                  className="object-contain"
+                />
+              </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Welcome to <span className="text-yellow-300">Navyug Trust</span>
