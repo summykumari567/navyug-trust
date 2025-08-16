@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
     unoptimized: true
   },
   // GitHub Pages configuration
-  basePath: '',
+  basePath: '/navyug-trust',
+  assetPrefix: '/navyug-trust/',
 };
 
 export default nextConfig;
