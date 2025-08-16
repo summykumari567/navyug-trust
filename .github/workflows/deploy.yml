@@ -36,10 +36,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Copy build files to root
+        run: |
+          cp -r out/* ./
+          rm -rf out
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './out'
+          path: './'
 
   deploy:
     environment:
@@ -51,4 +56,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        # Triggering fresh deployment for GitHub Pages

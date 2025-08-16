@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { 
-  GraduationCap, 
   Users, 
   Image, 
   Mail, 
@@ -11,13 +10,14 @@ import {
   Award,
   Target
 } from 'lucide-react';
+import ImageComponent from 'next/image';
 
 const categories = [
   {
     id: 'about',
     title: 'About',
     description: 'Learn about our trust, mission, and commitment to education excellence',
-    icon: GraduationCap,
+    icon: Users,
     href: '/about',
     color: 'bg-blue-500'
   },
@@ -77,7 +77,15 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
-            <GraduationCap className="h-20 w-20 text-blue-200" />
+            <div className="w-24 h-24 relative">
+              <ImageComponent
+                src="/navyug-logo.jpeg"
+                alt="Navyug Trust Logo"
+                width={96}
+                height={96}
+                className="object-contain"
+              />
+            </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Welcome to <span className="text-yellow-300">Navyug Trust</span>
@@ -178,7 +186,7 @@ export default function HomePage() {
               <div className="flex justify-center mb-4">
                 <Star className="h-12 w-12 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Excellence in Education</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Excellence in Education</h3>
               <p className="text-gray-300">
                 Our commitment to academic excellence ensures students receive the highest quality education
               </p>
@@ -187,7 +195,7 @@ export default function HomePage() {
               <div className="flex justify-center mb-4">
                 <Users className="h-12 w-12 text-blue-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Expert Faculty</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Expert Faculty</h3>
               <p className="text-gray-300">
                 Learn from experienced educators who are passionate about student success
               </p>
@@ -196,7 +204,7 @@ export default function HomePage() {
               <div className="flex justify-center mb-4">
                 <Target className="h-12 w-12 text-green-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Proven Results</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Results</h3>
               <p className="text-gray-300">
                 Our track record of student success speaks for our effective teaching methods
               </p>

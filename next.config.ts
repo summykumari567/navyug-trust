@@ -6,9 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // Enable these for GitHub Pages deployment
-  basePath: '/navyug-trust',
-  assetPrefix: '/navyug-trust/',
+  // GitHub Pages configuration - no basePath needed
 };
 
 export default nextConfig;

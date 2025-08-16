@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NavigationItem } from '@/types';
+import Image from 'next/image';
 
 const navigationItems: NavigationItem[] = [
   { id: 'about', label: 'About', href: '/about' },
@@ -33,8 +34,16 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <GraduationCap className="h-8 w-8 text-blue-600" />
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 relative">
+                <Image
+                  src="/navyug-logo.jpeg"
+                  alt="Navyug Trust Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+              </div>
               <span className="text-xl font-bold text-gray-900">Navyug Trust</span>
             </Link>
           </div>
