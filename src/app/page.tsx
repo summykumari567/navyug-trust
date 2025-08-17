@@ -370,57 +370,84 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Primary Education */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-64 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
-                <BookOpen className="h-16 w-16 text-white" />
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={process.env.NODE_ENV === 'production' ? '/navyug-trust/Primary-Education.jpeg' : 'Primary-Education.jpeg'}
+                  alt="Primary Education Classes"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Education Classes</h3>
                 <p className="text-gray-600 mb-4">
                   Children learning and growing in our primary education program.
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-end">
                   <span className="text-sm text-gray-500">2024</span>
-                  <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                    View Photos →
-                  </a>
                 </div>
               </div>
             </div>
 
+            {/* Skill Development Training */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-64 bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center">
-                <Users className="h-16 w-16 text-white" />
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={process.env.NODE_ENV === 'production' ? '/navyug-trust/Training.jpeg' : 'Training.jpeg'}
+                  alt="Skill Development Training"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Women Training</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Skill Development Training</h3>
                 <p className="text-gray-600 mb-4">
-                  Skill development and empowerment programs for rural women.
+                  Comprehensive skill development and empowerment programs for rural communities, 
+                  focusing on both men and women for sustainable livelihood.
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-end">
                   <span className="text-sm text-gray-500">2024</span>
-                  <a href="#" className="text-purple-600 hover:text-purple-700 font-medium">
-                    View Photos →
-                  </a>
                 </div>
               </div>
             </div>
 
+            {/* Skill Training Center */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-64 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
-                <Leaf className="h-16 w-16 text-white" />
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={process.env.NODE_ENV === 'production' ? '/navyug-trust/Skill-Training-Center.jpeg' : 'Skill-Training-Center.jpeg'}
+                  alt="Skill Training Center"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Skill Training Center</h3>
+                <p className="text-gray-600 mb-4">
+                  Dedicated training facilities for skill development and vocational training programs.
+                </p>
+                <div className="flex items-center justify-end">
+                  <span className="text-sm text-gray-500">2024</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Health Camps */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={process.env.NODE_ENV === 'production' ? '/navyug-trust/Health-Camp.png' : 'Health-Camp.png'}
+                  alt="Health Camps"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Health Camps</h3>
                 <p className="text-gray-600 mb-4">
                   Medical camps and environmental awareness programs.
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-end">
                   <span className="text-sm text-gray-500">2024</span>
-                  <a href="#" className="text-green-600 hover:text-green-700 font-medium">
-                    View Photos →
-                  </a>
                 </div>
               </div>
             </div>
