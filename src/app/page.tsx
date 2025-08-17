@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Users,
   Mail,
@@ -17,8 +19,101 @@ import {
   Eye,
   Flag
 } from 'lucide-react';
+import { useState } from 'react';
 
 export default function HomePage() {
+  // Contact form state
+  const [contactForm, setContactForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+  const [contactErrors, setContactErrors] = useState<{[key: string]: string}>({});
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+
+  // Volunteer form state
+  const [volunteerForm, setVolunteerForm] = useState({
+    volName: '',
+    volEmail: ''
+  });
+  const [volunteerErrors, setVolunteerErrors] = useState<{[key: string]: string}>({});
+  const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
+
+  // Handle contact form input changes
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setContactForm(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (contactErrors[name as keyof typeof contactErrors]) {
+      setContactErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  // Handle volunteer form input changes
+  const handleVolunteerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setVolunteerForm(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (volunteerErrors[name as keyof typeof volunteerErrors]) {
+      setVolunteerErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  // Validate contact form
+  const validateContactForm = () => {
+    const errors: {[key: string]: string} = {};
+    if (!contactForm.firstName.trim()) errors.firstName = 'First name is required';
+    if (!contactForm.lastName.trim()) errors.lastName = 'Last name is required';
+    if (!contactForm.email.trim()) errors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(contactForm.email)) errors.email = 'Please enter a valid email';
+    if (!contactForm.message.trim()) errors.message = 'Message is required';
+    
+    setContactErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  // Validate volunteer form
+  const validateVolunteerForm = () => {
+    const errors: {[key: string]: string} = {};
+    if (!volunteerForm.volName.trim()) errors.volName = 'Full name is required';
+    if (!volunteerForm.volEmail.trim()) errors.volEmail = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(volunteerForm.volEmail)) errors.volEmail = 'Please enter a valid email';
+    
+    setVolunteerErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  // Handle contact form submission
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (validateContactForm()) {
+      setContactSubmitted(true);
+      // Here you would typically send the data to your backend
+      console.log('Contact form submitted:', contactForm);
+      // Reset form after successful submission
+      setTimeout(() => {
+        setContactForm({ firstName: '', lastName: '', email: '', message: '' });
+        setContactSubmitted(false);
+      }, 3000);
+    }
+  };
+
+  // Handle volunteer form submission
+  const handleVolunteerSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (validateVolunteerForm()) {
+      setVolunteerSubmitted(true);
+      // Here you would typically send the data to your backend
+      console.log('Volunteer form submitted:', volunteerForm);
+      // Reset form after successful submission
+      setTimeout(() => {
+        setVolunteerForm({ volName: '', volEmail: '' });
+        setVolunteerSubmitted(false);
+      }, 3000);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -468,53 +563,90 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-gray-50 rounded-xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleContactSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name
+                      First Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       id="firstName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      name="firstName"
+                      value={contactForm.firstName}
+                      onChange={handleContactChange}
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${
+                        contactErrors.firstName ? 'border-red-500' : 'border-gray-300'
+                      }`}
                       placeholder="Enter your first name"
                     />
+                    {contactErrors.firstName && (
+                      <p className="mt-1 text-sm text-red-600">{contactErrors.firstName}</p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name
+                      Last Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       id="lastName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      name="lastName"
+                      value={contactForm.lastName}
+                      onChange={handleContactChange}
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${
+                        contactErrors.lastName ? 'border-red-500' : 'border-gray-300'
+                      }`}
                       placeholder="Enter your last name"
                     />
+                    {contactErrors.lastName && (
+                      <p className="mt-1 text-sm text-red-600">{contactErrors.lastName}</p>
+                    )}
                   </div>
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    name="email"
+                    value={contactForm.email}
+                    onChange={handleContactChange}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${
+                      contactErrors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your email"
                   />
+                  {contactErrors.email && (
+                    <p className="mt-1 text-sm text-red-600">{contactErrors.email}</p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
+                    Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    value={contactForm.message}
+                    onChange={handleContactChange}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${
+                      contactErrors.message ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your message"
                   ></textarea>
+                  {contactErrors.message && (
+                    <p className="mt-1 text-sm text-red-600">{contactErrors.message}</p>
+                  )}
                 </div>
+                {contactSubmitted && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p className="text-green-800 text-center">Thank you! Your message has been sent successfully.</p>
+                  </div>
+                )}
                 <button
                   type="submit"
                   className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
@@ -609,29 +741,50 @@ export default function HomePage() {
                 We welcome volunteers who want to contribute their time and skills to our various programs. 
                 Whether it&apos;s teaching, healthcare, or environmental work, your help makes a difference.
               </p>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleVolunteerSubmit}>
                 <div>
                   <label htmlFor="volName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
+                    Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     id="volName"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    name="volName"
+                    value={volunteerForm.volName}
+                    onChange={handleVolunteerChange}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${
+                      volunteerErrors.volName ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your full name"
                   />
+                  {volunteerErrors.volName && (
+                    <p className="mt-1 text-sm text-red-600">{volunteerErrors.volName}</p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="volEmail" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
                     id="volEmail"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    name="volEmail"
+                    value={volunteerForm.volEmail}
+                    onChange={handleVolunteerChange}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500 ${
+                      volunteerErrors.volEmail ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your email"
                   />
+                  {volunteerErrors.volEmail && (
+                    <p className="mt-1 text-sm text-red-600">{volunteerErrors.volEmail}</p>
+                  )}
                 </div>
+                {volunteerSubmitted && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p className="text-green-800 text-center">Thank you! Your volunteer application has been submitted successfully.</p>
+                  </div>
+                )}
                 <button
                   type="submit"
                   className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
