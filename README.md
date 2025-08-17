@@ -178,7 +178,7 @@ This project is licensed under the MIT License.
 
 For support and questions:
 - Email: info@navyughealtheducare.org
-- Phone: +91 (XXX) XXX-XXXX
+- Phone: +91 9334129333
 - Address: Village Siwan, Aurangabad, Bihar, India
 
 ## 🎯 Roadmap

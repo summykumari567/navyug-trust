@@ -10,13 +10,13 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-8 h-8 relative">
-                <img
-                  src="/navyug-trust/navyug-logo.jpeg"
-                  alt="Navyug Health and Educare Trust Logo"
-                  width={32}
-                  height={32}
-                  className="object-contain"
-                />
+                              <img
+                src="/navyug-logo.jpeg"
+                alt="Navyug Health and Educare Trust Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
               </div>
               <span className="text-xl font-bold">Navyug Health and Educare Trust</span>
             </div>
@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <Phone className="h-4 w-4" />
-                <span>+91 (XXX) XXX-XXXX</span>
+                <span>+91 9334129333</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <Mail className="h-4 w-4" />

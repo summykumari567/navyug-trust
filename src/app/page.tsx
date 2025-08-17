@@ -27,7 +27,7 @@ export default function HomePage() {
           <div className="flex justify-center mb-6">
             <div className="w-24 h-24 relative">
               <img
-                src="/navyug-trust/navyug-logo.jpeg"
+                src="/navyug-logo.jpeg"
                 alt="Navyug Health and Educare Trust Logo"
                 width={96}
                 height={96}
@@ -513,11 +513,25 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Address</h4>
-                    <p className="text-gray-600">
-                      Village Siwan<br />
-                      Aurangabad, Bihar<br />
-                      India
-                    </p>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="text-sm font-medium text-gray-700">Permanent Address:</p>
+                        <p className="text-gray-600">
+                          At Siwan, Barpa, Pauthu<br />
+                          Aurangabad, Bihar<br />
+                          Pin Code: 824114
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-gray-700">Head Office:</p>
+                        <p className="text-gray-600">
+                          Near Brahmarshi Chowk<br />
+                          Shri Krishna Nagar<br />
+                          Aurangabad, Bihar<br />
+                          Pin Code: 824101
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -528,8 +542,7 @@ export default function HomePage() {
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Phone</h4>
                     <p className="text-gray-600">
-                      +91 (XXX) XXX-XXXX<br />
-                      +91 (XXX) XXX-XXXX
+                      +91 9334129333
                     </p>
                   </div>
                 </div>
