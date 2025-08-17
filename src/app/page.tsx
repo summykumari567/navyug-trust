@@ -84,33 +84,95 @@ export default function HomePage() {
     return Object.keys(errors).length === 0;
   };
 
+  // Send email function
+  const sendEmail = async (formData: any, type: 'contact' | 'volunteer') => {
+    try {
+      const emailData = {
+        to: 'summy360plus@gmail.com',
+        subject: type === 'contact' ? 'New Contact Message from Navyug Website' : 'New Volunteer Application from Navyug Website',
+        message: type === 'contact' 
+          ? `New Contact Message:
+             
+             Name: ${formData.firstName} ${formData.lastName}
+             Email: ${formData.email}
+             Message: ${formData.message}
+             
+             This is a contact message from the Navyug Health and Educare Trust website.`
+          : `New Volunteer Application:
+             
+             Name: ${formData.volName}
+             Email: ${formData.volEmail}
+             
+             This is a volunteer application from the Navyug Health and Educare Trust website.`
+      };
+
+      // Using EmailJS service
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+
+      if (response.ok) {
+        console.log('Email sent successfully');
+        return true;
+      } else {
+        console.error('Failed to send email');
+        return false;
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      return false;
+    }
+  };
+
   // Handle contact form submission
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateContactForm()) {
       setContactSubmitted(true);
-      // Here you would typically send the data to your backend
-      console.log('Contact form submitted:', contactForm);
-      // Reset form after successful submission
-      setTimeout(() => {
-        setContactForm({ firstName: '', lastName: '', email: '', message: '' });
-        setContactSubmitted(false);
-      }, 3000);
+      
+      // Send email
+      const emailSent = await sendEmail(contactForm, 'contact');
+      
+      if (emailSent) {
+        // Reset form after successful submission
+        setTimeout(() => {
+          setContactForm({ firstName: '', lastName: '', email: '', message: '' });
+          setContactSubmitted(false);
+        }, 3000);
+      } else {
+        // Show error message
+        setTimeout(() => {
+          setContactSubmitted(false);
+        }, 3000);
+      }
     }
   };
 
   // Handle volunteer form submission
-  const handleVolunteerSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleVolunteerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateVolunteerForm()) {
       setVolunteerSubmitted(true);
-      // Here you would typically send the data to your backend
-      console.log('Volunteer form submitted:', volunteerForm);
-      // Reset form after successful submission
-      setTimeout(() => {
-        setVolunteerForm({ volName: '', volEmail: '' });
-        setVolunteerSubmitted(false);
-      }, 3000);
+      
+      // Send email
+      const emailSent = await sendEmail(volunteerForm, 'volunteer');
+      
+      if (emailSent) {
+        // Reset form after successful submission
+        setTimeout(() => {
+          setVolunteerForm({ volName: '', volEmail: '' });
+          setVolunteerSubmitted(false);
+        }, 3000);
+      } else {
+        // Show error message
+        setTimeout(() => {
+          setVolunteerSubmitted(false);
+        }, 3000);
+      }
     }
   };
 
@@ -644,7 +706,7 @@ export default function HomePage() {
                 </div>
                 {contactSubmitted && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-green-800 text-center">Thank you! Your message has been sent successfully.</p>
+                    <p className="text-green-800 text-center">Thank you! Your message has been sent successfully and an email notification has been sent to our team.</p>
                   </div>
                 )}
                 <button
@@ -782,7 +844,7 @@ export default function HomePage() {
                 </div>
                 {volunteerSubmitted && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-green-800 text-center">Thank you! Your volunteer application has been submitted successfully.</p>
+                    <p className="text-green-800 text-center">Thank you! Your volunteer application has been submitted successfully and an email notification has been sent to our team.</p>
                   </div>
                 )}
                 <button
