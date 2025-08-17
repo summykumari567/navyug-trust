@@ -602,8 +602,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="flex justify-center">
+            <div className="bg-white rounded-xl shadow-lg p-8 max-w-md">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Volunteer With Us</h3>
               <p className="text-gray-600 mb-6">
                 We welcome volunteers who want to contribute their time and skills to our various programs. 
@@ -639,31 +639,6 @@ export default function HomePage() {
                   Join as Volunteer
                 </button>
               </form>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Make a Donation</h3>
-              <p className="text-gray-600 mb-6">
-                Your financial support helps us continue our work in education, health, women empowerment, 
-                and environmental sustainability. Every contribution makes a real difference.
-              </p>
-              <div className="space-y-4">
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">Education Fund</h4>
-                  <p className="text-green-700 text-sm">Support primary education for underprivileged children</p>
-                </div>
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-purple-800 mb-2">Women Empowerment</h4>
-                  <p className="text-purple-700 text-sm">Help women become self-reliant through skill development</p>
-                </div>
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Health & Environment</h4>
-                  <p className="text-blue-700 text-sm">Support health camps and environmental initiatives</p>
-                </div>
-              </div>
-              <button className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors mt-6">
-                Donate Now
-              </button>
             </div>
           </div>
         </div>
