@@ -85,7 +85,7 @@ export default function HomePage() {
   };
 
   // Send email function
-  const sendEmail = async (formData: any, type: 'contact' | 'volunteer') => {
+  const sendEmail = async (formData: typeof contactForm | typeof volunteerForm, type: 'contact' | 'volunteer') => {
     try {
       const emailData = {
         to: 'summy360plus@gmail.com',
@@ -93,15 +93,15 @@ export default function HomePage() {
         message: type === 'contact' 
           ? `New Contact Message:
              
-             Name: ${formData.firstName} ${formData.lastName}
-             Email: ${formData.email}
-             Message: ${formData.message}
+             Name: ${(formData as typeof contactForm).firstName} ${(formData as typeof contactForm).lastName}
+             Email: ${(formData as typeof contactForm).email}
+             Message: ${(formData as typeof contactForm).message}
              
              This is a contact message from the Navyug Health and Educare Trust website.`
           : `New Volunteer Application:
              
-             Name: ${formData.volName}
-             Email: ${formData.volEmail}
+             Name: ${(formData as typeof volunteerForm).volName}
+             Email: ${(formData as typeof volunteerForm).volEmail}
              
              This is a volunteer application from the Navyug Health and Educare Trust website.`
       };
