@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-8 h-8 relative">
                               <img
-                src="navyug-logo.jpeg"
+                src={process.env.NODE_ENV === 'production' ? '/navyug-trust/navyug-logo.jpeg' : 'navyug-logo.jpeg'}
                 alt="Navyug Health and Educare Trust Logo"
                 width={32}
                 height={32}

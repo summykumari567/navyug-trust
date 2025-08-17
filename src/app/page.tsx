@@ -27,7 +27,7 @@ export default function HomePage() {
           <div className="flex justify-center mb-6">
             <div className="w-24 h-24 relative">
               <img
-                src="navyug-logo.jpeg"
+                src={process.env.NODE_ENV === 'production' ? '/navyug-trust/navyug-logo.jpeg' : 'navyug-logo.jpeg'}
                 alt="Navyug Health and Educare Trust Logo"
                 width={96}
                 height={96}
