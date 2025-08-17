@@ -11,31 +11,31 @@ export default function Footer() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-8 h-8 relative">
                 <img
-                  src={process.env.NODE_ENV === 'production' ? '/navyug-trust/navyug-logo.jpeg' : '/navyug-logo.jpeg'}
-                  alt="Navyug Trust Logo"
+                  src="/navyug-logo.jpeg"
+                  alt="Navyug Health and Educare Trust Logo"
                   width={32}
                   height={32}
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold">Navyug Trust</span>
+              <span className="text-xl font-bold">Navyug Health and Educare Trust</span>
             </div>
             <p className="text-gray-300 mb-4">
-              Empowering students with quality education and fostering academic excellence 
-              through innovative learning approaches and dedicated mentorship.
+              Empowering rural communities through education, health, skills, and sustainable practices 
+              since 2010. Dedicated to uplifting women and children through comprehensive development programs.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPin className="h-4 w-4" />
-                <span>123 Education Street, Learning City, LC 12345</span>
+                <span>Village Siwan, Aurangabad, Bihar, India</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 (XXX) XXX-XXXX</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <Mail className="h-4 w-4" />
-                <span>info@navyugtrust.edu</span>
+                <span>info@navyughealtheducare.org</span>
               </div>
             </div>
           </div>
@@ -50,8 +50,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#courses" className="text-gray-300 hover:text-white transition-colors">
-                  Our Courses
+                <Link href="#focus-areas" className="text-gray-300 hover:text-white transition-colors">
+                  Focus Areas
                 </Link>
               </li>
               <li>
@@ -67,28 +67,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Student Resources */}
+          {/* Programs & Support */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Student Resources</h3>
+            <h3 className="text-lg font-semibold mb-4">Programs & Support</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#student-zone" className="text-gray-300 hover:text-white transition-colors">
-                  Student Zone
+                <Link href="#programs" className="text-gray-300 hover:text-white transition-colors">
+                  Our Programs
                 </Link>
               </li>
               <li>
-                <Link href="#student-login" className="text-gray-300 hover:text-white transition-colors">
-                  Student Login
+                <Link href="#support" className="text-gray-300 hover:text-white transition-colors">
+                  Support Us
                 </Link>
               </li>
               <li>
-                <Link href="#courses" className="text-gray-300 hover:text-white transition-colors">
-                  Course Catalog
+                <Link href="#focus-areas" className="text-gray-300 hover:text-white transition-colors">
+                  Focus Areas
                 </Link>
               </li>
               <li>
                 <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
-                  Support
+                  Get Involved
                 </Link>
               </li>
             </ul>
@@ -97,7 +97,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Navyug Trust. All rights reserved.
+            © {new Date().getFullYear()} Navyug Health and Educare Trust. All rights reserved.
           </p>
         </div>
       </div>

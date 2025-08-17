@@ -10,13 +10,13 @@ const geistSans = Geist({
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Navyug Trust - Empowering Education Excellence",
-  description: "Navyug Trust is dedicated to providing quality education and fostering academic excellence through innovative learning approaches and dedicated mentorship.",
+  title: "Navyug Health and Educare Trust - Empowering Rural Communities",
+  description: "Navyug Health and Educare Trust is dedicated to uplifting rural communities through education, health, women empowerment, and environmental sustainability since 2010.",
 };
 
 export default function RootLayout({

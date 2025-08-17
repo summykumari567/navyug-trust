@@ -5,14 +5,14 @@ export interface NavigationItem {
   isActive?: boolean;
 }
 
-export interface Course {
+export interface Program {
   id: string;
   title: string;
   description: string;
   duration: string;
   category: string;
   image: string;
-  price?: number;
+  beneficiaries?: number;
 }
 
 export interface GalleryItem {
@@ -30,6 +30,7 @@ export interface TrustInfo {
   established: string;
   mission: string;
   vision: string;
+  focusAreas: string[];
 }
 
 export interface ContactForm {
@@ -39,7 +40,16 @@ export interface ContactForm {
   message: string;
 }
 
-export interface StudentLogin {
+export interface VolunteerForm {
+  name: string;
   email: string;
-  password: string;
+  phone?: string;
+  areaOfInterest?: string;
+}
+
+export interface DonationForm {
+  name: string;
+  email: string;
+  amount: number;
+  fundType: 'education' | 'women-empowerment' | 'health-environment' | 'general';
 }

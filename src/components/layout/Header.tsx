@@ -8,11 +8,11 @@ import { NavigationItem } from '@/types';
 
 const navigationItems: NavigationItem[] = [
   { id: 'about', label: 'About', href: '#about' },
-  { id: 'courses', label: 'Courses', href: '#courses' },
-  { id: 'student-zone', label: 'Student Zone', href: '#student-zone' },
+  { id: 'focus-areas', label: 'Focus Areas', href: '#focus-areas' },
+  { id: 'programs', label: 'Programs', href: '#programs' },
   { id: 'gallery', label: 'Gallery', href: '#gallery' },
   { id: 'contact', label: 'Contact', href: '#contact' },
-  { id: 'student-login', label: 'Student Login', href: '#student-login' },
+  { id: 'support', label: 'Support Us', href: '#support' },
 ];
 
 export default function Header() {
@@ -36,14 +36,14 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 relative">
                 <img
-                  src={process.env.NODE_ENV === 'production' ? '/navyug-trust/navyug-logo.jpeg' : '/navyug-logo.jpeg'}
-                  alt="Navyug Trust Logo"
+                  src="/navyug-logo.jpeg"
+                  alt="Navyug Health and Educare Trust Logo"
                   width={40}
                   height={40}
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold text-gray-900">Navyug Trust</span>
+              <span className="text-xl font-bold text-gray-900">Navyug Health and Educare Trust</span>
             </Link>
           </div>
 
@@ -57,8 +57,8 @@ export default function Header() {
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     isActive
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-green-600 bg-green-50'
+                      : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                   }`}
                 >
                   {item.label}
@@ -71,7 +71,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+              className="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -96,8 +96,8 @@ export default function Header() {
                   onClick={closeMobileMenu}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-green-600 bg-green-50'
+                      : 'text-gray-700 hover:text-green-600 hover:bg-gray-50'
                   }`}
                 >
                   {item.label}

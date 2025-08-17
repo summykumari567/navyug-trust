@@ -1,16 +1,16 @@
-# Navyug Trust - Education Application
+# Navyug Health and Educare Trust - Community Development Application
 
-A modern, responsive web application for Navyug Trust, an educational institution dedicated to providing quality education and fostering academic excellence.
+A modern, responsive web application for Navyug Health and Educare Trust, an organization dedicated to uplifting rural communities through education, health, women empowerment, and environmental sustainability since 2010.
 
 ## 🚀 Features
 
 ### Core Navigation
 - **About** - Trust information, mission, vision, and values
-- **Courses** - Course catalog with search and filtering
-- **Student Zone** - Student resources and downloads
-- **Gallery** - Photo gallery with categories
+- **Focus Areas** - Four pillars of development: Education, Women Empowerment, Environmental Safety, and Health Initiatives
+- **Programs** - Comprehensive programs for rural community development
+- **Gallery** - Photo gallery showcasing our work and impact
 - **Contact** - Contact form and information
-- **Student Login** - Student portal access
+- **Support Us** - Volunteer opportunities and donation options
 
 ### Technical Features
 - Responsive design for all devices
@@ -43,11 +43,11 @@ navyug/
 ├── src/
 │   ├── app/                    # Next.js App Router pages
 │   │   ├── about/             # About page
-│   │   ├── courses/           # Courses page
-│   │   ├── student-zone/      # Student Zone page
+│   │   ├── focus-areas/       # Focus Areas page
+│   │   ├── programs/          # Programs page
 │   │   ├── gallery/           # Gallery page
 │   │   ├── contact/           # Contact page
-│   │   ├── student-login/     # Student Login page
+│   │   ├── support/           # Support Us page
 │   │   ├── layout.tsx         # Root layout
 │   │   ├── page.tsx           # Home page
 │   │   └── globals.css        # Global styles
@@ -105,8 +105,8 @@ navyug/
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary**: Blue (#2563eb)
-- **Secondary**: Indigo (#4f46e5)
+- **Primary**: Green (#10b981)
+- **Secondary**: Emerald (#059669)
 - **Accent**: Yellow (#fbbf24)
 - **Success**: Green (#10b981)
 - **Warning**: Orange (#f97316)
@@ -177,9 +177,9 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support and questions:
-- Email: info@navyugtrust.edu
-- Phone: +1 (555) 123-4567
-- Website: [navyugtrust.edu](https://navyugtrust.edu)
+- Email: info@navyughealtheducare.org
+- Phone: +91 (XXX) XXX-XXXX
+- Address: Village Siwan, Aurangabad, Bihar, India
 
 ## 🎯 Roadmap
 
@@ -204,4 +204,4 @@ For support and questions:
 
 ---
 
-**Built with ❤️ for Navyug Trust**
+**Built with ❤️ for Navyug Health and Educare Trust**

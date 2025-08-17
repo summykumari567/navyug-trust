@@ -1,40 +1,34 @@
-import Link from 'next/link';
 import {
   Users,
-  Image,
   Mail,
   BookOpen,
-  UserCheck,
   ArrowRight,
-  Star,
-  Award,
-  Target,
   GraduationCap,
   Calendar,
   Clock,
   MapPin,
   Phone,
-  Download,
-  FileText,
-  Video,
-  Camera,
   Heart,
-  Shield,
-  Globe,
-  Lightbulb
+  Leaf,
+  Stethoscope,
+  Baby,
+  Sparkles,
+  Target,
+  Eye,
+  Flag
 } from 'lucide-react';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
+      <section className="bg-gradient-to-br from-green-600 via-green-700 to-emerald-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             <div className="w-24 h-24 relative">
               <img
-                src={process.env.NODE_ENV === 'production' ? '/navyug-trust/navyug-logo.jpeg' : '/navyug-logo.jpeg'}
-                alt="Navyug Trust Logo"
+                src="/navyug-logo.jpeg"
+                alt="Navyug Health and Educare Trust Logo"
                 width={96}
                 height={96}
                 className="object-contain"
@@ -42,25 +36,24 @@ export default function HomePage() {
             </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Welcome to <span className="text-yellow-300">Navyug Trust</span>
+            Welcome to <span className="text-yellow-300">Navyug Health and Educare Trust</span>
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Empowering students with quality education and fostering academic excellence 
-            through innovative learning approaches and dedicated mentorship.
+          <p className="text-xl md:text-2xl text-green-100 mb-8 max-w-3xl mx-auto">
+            Empowering rural communities through education, health, skills, and sustainable practices since 2010
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="#courses" 
-              className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors inline-flex items-center space-x-2"
+              href="#about" 
+              className="bg-yellow-400 text-green-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors inline-flex items-center space-x-2"
             >
-              <span>Explore Courses</span>
+              <span>Learn More</span>
               <ArrowRight className="h-5 w-5" />
             </a>
             <a 
-              href="#about" 
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors"
+              href="#contact" 
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-900 transition-colors"
             >
-              Learn More
+              Contact Us
             </a>
           </div>
         </div>
@@ -72,31 +65,31 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="flex justify-center mb-4">
-                <Award className="h-12 w-12 text-blue-600" />
+                <Calendar className="h-12 w-12 text-green-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">25+</div>
-              <div className="text-gray-600">Years of Excellence</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">14+</div>
+              <div className="text-gray-600">Years of Service</div>
             </div>
             <div className="text-center">
               <div className="flex justify-center mb-4">
-                <Users className="h-12 w-12 text-blue-600" />
+                <Baby className="h-12 w-12 text-green-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">5000+</div>
-              <div className="text-gray-600">Students Enrolled</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">1000+</div>
+              <div className="text-gray-600">Children Educated</div>
             </div>
             <div className="text-center">
               <div className="flex justify-center mb-4">
-                <BookOpen className="h-12 w-12 text-blue-600" />
+                <Users className="h-12 w-12 text-green-600" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">500+</div>
+              <div className="text-gray-600">Women Empowered</div>
+            </div>
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Heart className="h-12 w-12 text-green-600" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">50+</div>
-              <div className="text-gray-600">Courses Offered</div>
-            </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Target className="h-12 w-12 text-blue-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">95%</div>
-              <div className="text-gray-600">Success Rate</div>
+              <div className="text-gray-600">Health Camps</div>
             </div>
           </div>
         </div>
@@ -106,56 +99,85 @@ export default function HomePage() {
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Navyug Trust</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Navyug Health and Educare Trust</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover our journey, mission, and commitment to educational excellence
+              Dedicated to uplifting rural communities through comprehensive development programs
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Story</h3>
               <p className="text-gray-600 mb-6">
-                Founded in 1999, Navyug Trust has been at the forefront of educational innovation 
-                for over two decades. We believe that every student deserves access to quality 
-                education that prepares them for the challenges of tomorrow.
+                Established in 2010 in Village Siwan, Aurangabad, Bihar, Navyug Health and Educare Trust 
+                has been working tirelessly to transform the lives of rural communities through our 
+                four core focus areas.
               </p>
               <p className="text-gray-600 mb-6">
-                Our commitment to academic excellence, combined with innovative teaching methods 
-                and dedicated faculty, has helped thousands of students achieve their dreams and 
-                build successful careers.
+                We believe in creating sustainable change by addressing the fundamental needs of 
+                education, health, women empowerment, and environmental conservation in rural areas.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
-                  <Heart className="h-6 w-6 text-blue-600" />
-                  <span className="text-gray-700">Student-Centered Approach</span>
+                  <BookOpen className="h-6 w-6 text-green-600" />
+                  <span className="text-gray-700">Education First</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Shield className="h-6 w-6 text-blue-600" />
-                  <span className="text-gray-700">Quality Assurance</span>
+                  <Heart className="h-6 w-6 text-green-600" />
+                  <span className="text-gray-700">Health & Wellness</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Globe className="h-6 w-6 text-blue-600" />
-                  <span className="text-gray-700">Global Perspective</span>
+                  <Users className="h-6 w-6 text-green-600" />
+                  <span className="text-gray-700">Women Empowerment</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Lightbulb className="h-6 w-6 text-blue-600" />
-                  <span className="text-gray-700">Innovation Focus</span>
+                  <Leaf className="h-6 w-6 text-green-600" />
+                  <span className="text-gray-700">Sustainable Practices</span>
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-8">
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Mission</h4>
-                <p className="text-gray-700 mb-6">
-                  To provide accessible, high-quality education that empowers students to become 
-                  confident, competent, and compassionate individuals ready to make a positive 
-                  impact in the world.
+            
+            <div className="space-y-8">
+              {/* AIM Section */}
+              <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6 border-l-4 border-red-500">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
+                    <Target className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900">AIM</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  To empower rural communities through education, health, skills, and sustainable practices, 
+                  creating opportunities for a better future for women and children.
                 </p>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Our Vision</h4>
-                <p className="text-gray-700">
-                  To be a leading educational institution recognized for excellence, innovation, 
-                  and commitment to student success, shaping the future of education.
+              </div>
+
+              {/* VISION Section */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-l-4 border-green-500">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                    <Eye className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900">VISION</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  To be a leading organization in rural development, recognized for our commitment to 
+                  education, health, women empowerment, and environmental sustainability.
+                </p>
+              </div>
+
+              {/* MISSION Section */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-l-4 border-blue-500">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                    <Flag className="h-6 w-6 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900">MISSION</h4>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  To organize, support, and facilitate comprehensive development programs, train community members, 
+                  raise awareness, and provide necessary infrastructure and resources to ensure sustainable 
+                  development for all rural communities.
                 </p>
               </div>
             </div>
@@ -163,63 +185,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Courses Section */}
-      <section id="courses" className="py-20 bg-gray-50">
+      {/* Focus Areas Section */}
+      <section id="focus-areas" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Courses</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Focus Areas</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore our comprehensive range of educational programs designed for your success
+              Four pillars of development that drive our mission forward
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Course Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Primary Education */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="p-8">
                 <div className="inline-flex p-3 rounded-lg mb-6 bg-blue-500 text-white">
-                  <GraduationCap className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Computer Science</h3>
-                <p className="text-gray-600 mb-4">
-                  Master programming, algorithms, and software development with hands-on projects.
-                </p>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <Clock className="h-4 w-4" />
-                    <span>2 Years</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <Users className="h-4 w-4" />
-                    <span>120 Students</span>
-                  </div>
-                </div>
-                <div className="flex items-center text-blue-600 font-medium">
-                  <span>Learn More</span>
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="p-8">
-                <div className="inline-flex p-3 rounded-lg mb-6 bg-green-500 text-white">
                   <BookOpen className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Business Administration</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Primary Education</h3>
                 <p className="text-gray-600 mb-4">
-                  Develop leadership skills and business acumen for the modern corporate world.
+                  Providing access to basic education for underprivileged children in rural areas, 
+                  focusing on literacy, numeracy, and overall development.
                 </p>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <Clock className="h-4 w-4" />
-                    <span>3 Years</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <Users className="h-4 w-4" />
-                    <span>85 Students</span>
-                  </div>
-                </div>
                 <div className="flex items-center text-blue-600 font-medium">
                   <span>Learn More</span>
                   <ArrowRight className="h-4 w-4 ml-2" />
@@ -227,26 +214,54 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Skill Development & Women Empowerment */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="p-8">
                 <div className="inline-flex p-3 rounded-lg mb-6 bg-purple-500 text-white">
-                  <Target className="h-8 w-8" />
+                  <Users className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Data Science</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Women Empowerment</h3>
                 <p className="text-gray-600 mb-4">
-                  Learn data analysis, machine learning, and statistical modeling techniques.
+                  Training programs to make women self-reliant with support for livelihood opportunities 
+                  and skill development initiatives.
                 </p>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <Clock className="h-4 w-4" />
-                    <span>1.5 Years</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <Users className="h-4 w-4" />
-                    <span>65 Students</span>
-                  </div>
+                <div className="flex items-center text-purple-600 font-medium">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4 ml-2" />
                 </div>
-                <div className="flex items-center text-blue-600 font-medium">
+              </div>
+            </div>
+
+            {/* Environment Safety & Sustainable Practices */}
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="p-8">
+                <div className="inline-flex p-3 rounded-lg mb-6 bg-green-500 text-white">
+                  <Leaf className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Environmental Safety</h3>
+                <p className="text-gray-600 mb-4">
+                  Awareness campaigns on environmental protection, promotion of organic farming, 
+                  and cultivation of medicinal plants for sustainable development.
+                </p>
+                <div className="flex items-center text-green-600 font-medium">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </div>
+              </div>
+            </div>
+
+            {/* Health Initiatives */}
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="p-8">
+                <div className="inline-flex p-3 rounded-lg mb-6 bg-red-500 text-white">
+                  <Stethoscope className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Health Initiatives</h3>
+                <p className="text-gray-600 mb-4">
+                  Organizing health camps in rural and tribal areas, providing medical support 
+                  and health awareness programs.
+                </p>
+                <div className="flex items-center text-red-600 font-medium">
                   <span>Learn More</span>
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </div>
@@ -256,53 +271,89 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Student Zone Section */}
-      <section id="student-zone" className="py-20 bg-white">
+      {/* Programs Section */}
+      <section id="programs" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Student Zone</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Access all the resources you need for your academic journey
+              Comprehensive programs designed to create lasting impact in rural communities
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Education Program */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
               <div className="inline-flex p-3 rounded-lg mb-6 bg-blue-500 text-white">
-                <Download className="h-8 w-8" />
+                <GraduationCap className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Study Materials</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Education Program</h3>
               <p className="text-gray-600 mb-4">
-                Access comprehensive study guides, lecture notes, and reference materials.
+                Free primary education for underprivileged children with focus on quality learning 
+                and holistic development.
               </p>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <Clock className="h-4 w-4" />
+                  <span>Year-round</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <Users className="h-4 w-4" />
+                  <span>100+ Children</span>
+                </div>
+              </div>
               <a href="#" className="text-blue-600 font-medium hover:text-blue-700">
-                Download Now →
+                Learn More →
               </a>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
-              <div className="inline-flex p-3 rounded-lg mb-6 bg-green-500 text-white">
-                <Calendar className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Academic Calendar</h3>
-              <p className="text-gray-600 mb-4">
-                Stay updated with important dates, exams, and academic events.
-              </p>
-              <a href="#" className="text-green-600 font-medium hover:text-green-700">
-                View Calendar →
-              </a>
-            </div>
-
+            {/* Women Empowerment Program */}
             <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
               <div className="inline-flex p-3 rounded-lg mb-6 bg-purple-500 text-white">
-                <FileText className="h-8 w-8" />
+                <Sparkles className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Assignment Portal</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Women Empowerment</h3>
               <p className="text-gray-600 mb-4">
-                Submit assignments, track grades, and communicate with instructors.
+                Skill development training, livelihood support, and entrepreneurship programs 
+                to make women self-reliant.
               </p>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <Clock className="h-4 w-4" />
+                  <span>Ongoing</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <Users className="h-4 w-4" />
+                  <span>200+ Women</span>
+                </div>
+              </div>
               <a href="#" className="text-purple-600 font-medium hover:text-purple-700">
-                Access Portal →
+                Learn More →
+              </a>
+            </div>
+
+            {/* Health & Environment Program */}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+              <div className="inline-flex p-3 rounded-lg mb-6 bg-green-500 text-white">
+                <Heart className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Health & Environment</h3>
+              <p className="text-gray-600 mb-4">
+                Regular health camps, environmental awareness, and sustainable farming practices 
+                for community wellness.
+              </p>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <Clock className="h-4 w-4" />
+                  <span>Quarterly</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <Users className="h-4 w-4" />
+                  <span>500+ Beneficiaries</span>
+                </div>
+              </div>
+              <a href="#" className="text-green-600 font-medium hover:text-green-700">
+                Learn More →
               </a>
             </div>
           </div>
@@ -315,22 +366,22 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Gallery</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore moments from our campus life, events, and student activities
+              Glimpses of our work and impact in rural communities
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="h-64 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
-                <Camera className="h-16 w-16 text-white" />
+                <BookOpen className="h-16 w-16 text-white" />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Graduation Ceremony 2024</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Education Classes</h3>
                 <p className="text-gray-600 mb-4">
-                  Celebrating the achievements of our graduating class with pride and joy.
+                  Children learning and growing in our primary education program.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">December 2024</span>
+                  <span className="text-sm text-gray-500">2024</span>
                   <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
                     View Photos →
                   </a>
@@ -339,17 +390,17 @@ export default function HomePage() {
             </div>
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-64 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+              <div className="h-64 bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center">
                 <Users className="h-16 w-16 text-white" />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Student Workshops</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Women Training</h3>
                 <p className="text-gray-600 mb-4">
-                  Interactive workshops and skill development sessions for our students.
+                  Skill development and empowerment programs for rural women.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">November 2024</span>
-                  <a href="#" className="text-green-600 hover:text-green-700 font-medium">
+                  <span className="text-sm text-gray-500">2024</span>
+                  <a href="#" className="text-purple-600 hover:text-purple-700 font-medium">
                     View Photos →
                   </a>
                 </div>
@@ -357,17 +408,17 @@ export default function HomePage() {
             </div>
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-64 bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center">
-                <BookOpen className="h-16 w-16 text-white" />
+              <div className="h-64 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                <Leaf className="h-16 w-16 text-white" />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Library & Study Areas</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Health Camps</h3>
                 <p className="text-gray-600 mb-4">
-                  Modern library facilities and comfortable study spaces for students.
+                  Medical camps and environmental awareness programs.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">October 2024</span>
-                  <a href="#" className="text-purple-600 hover:text-purple-700 font-medium">
+                  <span className="text-sm text-gray-500">2024</span>
+                  <a href="#" className="text-green-600 hover:text-green-700 font-medium">
                     View Photos →
                   </a>
                 </div>
@@ -383,7 +434,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Get in touch with us for inquiries, support, or to learn more about our programs
+              Get in touch with us to learn more about our programs or to support our mission
             </p>
           </div>
 
@@ -399,7 +450,7 @@ export default function HomePage() {
                     <input
                       type="text"
                       id="firstName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="Enter your first name"
                     />
                   </div>
@@ -410,7 +461,7 @@ export default function HomePage() {
                     <input
                       type="text"
                       id="lastName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -422,7 +473,7 @@ export default function HomePage() {
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -433,13 +484,13 @@ export default function HomePage() {
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Enter your message"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                 >
                   Send Message
                 </button>
@@ -450,48 +501,48 @@ export default function HomePage() {
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
                 <p className="text-gray-600 mb-8">
-                  We&apos;re here to help and answer any questions you might have. 
-                  We look forward to hearing from you.
+                  We&apos;re here to help and answer any questions you might have about our programs 
+                  or how you can support our mission.
                 </p>
               </div>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-blue-600" />
+                    <MapPin className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Address</h4>
                     <p className="text-gray-600">
-                      123 Education Street<br />
-                      Learning City, LC 12345<br />
-                      United States
+                      Village Siwan<br />
+                      Aurangabad, Bihar<br />
+                      India
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                    <Phone className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Phone</h4>
                     <p className="text-gray-600">
-                      +1 (555) 123-4567<br />
-                      +1 (555) 123-4568
+                      +91 (XXX) XXX-XXXX<br />
+                      +91 (XXX) XXX-XXXX
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <Mail className="h-6 w-6 text-blue-600" />
+                    <Mail className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
                     <p className="text-gray-600">
-                      info@navyugtrust.edu<br />
-                      admissions@navyugtrust.edu
+                      info@navyughealtheducare.org<br />
+                      contact@navyughealtheducare.org
                     </p>
                   </div>
                 </div>
@@ -501,89 +552,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Student Login Section */}
-      <section id="student-login" className="py-20 bg-gray-50">
+      {/* Support Section */}
+      <section id="support" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Student Portal</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Support Our Mission</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Access your student dashboard and manage your academic journey
+              Join us in creating positive change in rural communities
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Student Login</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Volunteer With Us</h3>
+              <p className="text-gray-600 mb-6">
+                We welcome volunteers who want to contribute their time and skills to our various programs. 
+                Whether it&apos;s teaching, healthcare, or environmental work, your help makes a difference.
+              </p>
               <form className="space-y-6">
                 <div>
-                  <label htmlFor="studentId" className="block text-sm font-medium text-gray-700 mb-2">
-                    Student ID
+                  <label htmlFor="volName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name
                   </label>
                   <input
                     type="text"
-                    id="studentId"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your student ID"
+                    id="volName"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="Enter your full name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    id="password"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your password"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  Login to Portal
-                </button>
-              </form>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">New Student Registration</h3>
-              <p className="text-gray-600 mb-6">
-                Don&apos;t have an account? Register now to access all student resources and services.
-              </p>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="regFirstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="regFirstName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="regLastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="regLastName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your last name"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="regEmail" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="volEmail" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
-                    id="regEmail"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    id="volEmail"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -591,9 +596,34 @@ export default function HomePage() {
                   type="submit"
                   className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                 >
-                  Create Account
+                  Join as Volunteer
                 </button>
               </form>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Make a Donation</h3>
+              <p className="text-gray-600 mb-6">
+                Your financial support helps us continue our work in education, health, women empowerment, 
+                and environmental sustainability. Every contribution makes a real difference.
+              </p>
+              <div className="space-y-4">
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-green-800 mb-2">Education Fund</h4>
+                  <p className="text-green-700 text-sm">Support primary education for underprivileged children</p>
+                </div>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-purple-800 mb-2">Women Empowerment</h4>
+                  <p className="text-purple-700 text-sm">Help women become self-reliant through skill development</p>
+                </div>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-blue-800 mb-2">Health & Environment</h4>
+                  <p className="text-blue-700 text-sm">Support health camps and environmental initiatives</p>
+                </div>
+              </div>
+              <button className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors mt-6">
+                Donate Now
+              </button>
             </div>
           </div>
         </div>
