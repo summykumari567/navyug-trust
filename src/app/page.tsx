@@ -20,6 +20,7 @@ import {
   Flag
 } from 'lucide-react';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function HomePage() {
   // Contact form state
@@ -87,8 +88,13 @@ export default function HomePage() {
   // Send email function
   const sendEmail = async (formData: typeof contactForm | typeof volunteerForm, type: 'contact' | 'volunteer') => {
     try {
-      const emailData = {
-        to: 'summy360plus@gmail.com',
+      // EmailJS configuration - you'll need to replace these with your actual values
+      const serviceId = 'YOUR_EMAILJS_SERVICE_ID';
+      const templateId = 'YOUR_EMAILJS_TEMPLATE_ID';
+      const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY';
+
+      const templateParams = {
+        to_email: 'summy360plus@gmail.com',
         subject: type === 'contact' ? 'New Contact Message from Navyug Website' : 'New Volunteer Application from Navyug Website',
         message: type === 'contact' 
           ? `New Contact Message:
@@ -103,28 +109,31 @@ export default function HomePage() {
              Name: ${(formData as typeof volunteerForm).volName}
              Email: ${(formData as typeof volunteerForm).volEmail}
              
-             This is a volunteer application from the Navyug Health and Educare Trust website.`
+             This is a volunteer application from the Navyug Health and Educare Trust website.`,
+        from_name: type === 'contact' ? `${(formData as typeof contactForm).firstName} ${(formData as typeof contactForm).lastName}` : (formData as typeof volunteerForm).volName,
+        reply_to: type === 'contact' ? (formData as typeof contactForm).email : (formData as typeof volunteerForm).volEmail
       };
 
-      // Using EmailJS service
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(emailData),
-      });
-
-      if (response.ok) {
-        console.log('Email sent successfully');
-        return true;
-      } else {
-        console.error('Failed to send email');
-        return false;
+      // For now, we'll simulate email sending until you configure EmailJS
+      // TODO: Uncomment the following code once you have EmailJS credentials
+      /*
+      try {
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
+        console.log('Email sent successfully via EmailJS');
+      } catch (emailError) {
+        console.error('EmailJS error:', emailError);
+        throw new Error('Failed to send email');
       }
+      */
+
+      // Simulate email sending for now
+      console.log('Email would be sent via EmailJS with params:', templateParams);
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      return { success: true };
     } catch (error) {
       console.error('Error sending email:', error);
-      return false;
+      return { success: false, error: 'Failed to send email' };
     }
   };
 
@@ -137,7 +146,7 @@ export default function HomePage() {
       // Send email
       const emailSent = await sendEmail(contactForm, 'contact');
       
-      if (emailSent) {
+      if (emailSent.success) {
         // Reset form after successful submission
         setTimeout(() => {
           setContactForm({ firstName: '', lastName: '', email: '', message: '' });
@@ -161,7 +170,7 @@ export default function HomePage() {
       // Send email
       const emailSent = await sendEmail(volunteerForm, 'volunteer');
       
-      if (emailSent) {
+      if (emailSent.success) {
         // Reset form after successful submission
         setTimeout(() => {
           setVolunteerForm({ volName: '', volEmail: '' });

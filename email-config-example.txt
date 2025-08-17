@@ -1,0 +1,22 @@
+# Email Configuration Example
+# Copy these values to your .env.local file or directly in the code
+
+# EmailJS Configuration
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id_here
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id_here
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key_here
+
+# Alternative: SendGrid Configuration
+# SENDGRID_API_KEY=your_sendgrid_api_key_here
+# SENDGRID_FROM_EMAIL=your_verified_sender_email@domain.com
+
+# Alternative: Gmail SMTP Configuration
+# GMAIL_USER=your_gmail@gmail.com
+# GMAIL_APP_PASSWORD=your_gmail_app_password_here
+
+# Instructions:
+# 1. Sign up for EmailJS at https://www.emailjs.com/
+# 2. Get your Service ID, Template ID, and Public Key
+# 3. Replace the placeholder values above
+# 4. Update src/app/page.tsx with your actual values
+# 5. Uncomment the EmailJS.send() code in the sendEmail function
